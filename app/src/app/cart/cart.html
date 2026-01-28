@@ -1,0 +1,25 @@
+<h1>Cart</h1>
+<p class="cart-empty" *ngIf="cart.length === 0">Your cart is empty.</p>
+<div class="cart-container" *ngIf="cart.length > 0">
+  <div class="cart-panel">
+    <div class="cart-item" *ngFor="let item of cart">
+      <img [src]="item.product.url" alt="{{ item.product.name }}" />
+      <div class="cart-item-details">
+          <h3>{{ item.product.name }}</h3>
+          <p><strong>Price</strong>: ${{ item.product.price }}</p>
+          <p><strong>Quantity</strong>: <input type="number" class="number-input" [value]="item.quantity" min="0" max="10" (input)="updateCart(item.product, $event.target.value)"></p>
+          <p><strong>Item Total</strong>: ${{ (item.product.price * item.quantity).toFixed(2) }}</p>
+      </div>
+    </div>
+    <h2>Cart Total: ${{ calculateTotal().toFixed(2) }}</h2>
+  </div>
+  <form #checkoutForm="ngForm" (ngSubmit)="onSubmit({name: name.value, address: address.value, creditCard: creditCard.value})">
+    <label>Full Name</label>
+    <input type="text" class="form-margin" #name />
+    <label>Address</label>
+    <input type="text" class="form-margin" #address />
+    <label>Credit Card Number</label>
+    <input type="text" class="form-margin" #creditCard />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

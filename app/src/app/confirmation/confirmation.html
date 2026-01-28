@@ -1,0 +1,11 @@
+<h1>Confirmation</h1>
+<div class="confirmation-container">
+    <div class="confirmation-items">
+        <h2>Success!</h2>
+        <p class="confirmation-item">Thank you for your order, {{ order.name }}.</p>
+        <p class="confirmation-item">Your order for ${{ order.total().toFixed(2)}} will be shipped to:<br/>
+            {{ order.address }}</p>
+        <p class="confirmation-item">Thanks for shopping with us!</p>
+        <a routerLink="/" class="btn btn-primary">Back to Product List</a>
+    </div>
+</div>
