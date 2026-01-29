@@ -1,7 +1,11 @@
 services:
   postgres:
     image: postgres:latest
+    container_name: mystore-api
     environment:
-      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_USER: mystore_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: mystore
     ports:
       - "5432:5432"

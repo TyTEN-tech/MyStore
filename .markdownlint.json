@@ -1,0 +1,12 @@
+{
+  "blanks-around-headings": false,
+  "blanks-around-lists": false,
+  "heading-increment": false,
+  "line-length": false,
+  "list-marker-space": false,
+  "no-duplicate-heading": false,
+  "no-multiple-blanks": false,
+  "no-reversed-links": false,
+  "no-trailing-spaces": false,
+  "ul-indent": false
+}
